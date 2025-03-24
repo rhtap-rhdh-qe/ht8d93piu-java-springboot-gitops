@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ht8d93piu-java-springboot-gitops
+  description: This is GitOps manifest for ht8d93piu-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ht8d93piu-java-springboot
+    backstage.io/kubernetes-id: ht8d93piu-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ht8d93piu-java-springboot   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ht8d93piu-java-springboot
